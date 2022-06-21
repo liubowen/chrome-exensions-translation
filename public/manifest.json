@@ -1,0 +1,31 @@
+{
+  "name": "Translation",
+  "description": "English Translation",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "./assets/get_started16.png",
+      "32": "./assets/get_started32.png",
+      "48": "./assets/get_started48.png",
+      "128": "./assets/get_started128.png"
+    }
+  },
+  "icons": {
+    "16": "./assets/get_started16.png",
+    "32": "./assets/get_started32.png",
+    "48": "./assets/get_started48.png",
+    "128": "./assets/get_started128.png"
+  },
+  "permissions": ["scripting", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["\u003Call_urls>"],
+      "js": ["./injection.js"]
+    }
+  ],
+  "host_permissions": ["https://openapi.youdao.com/"]
+}
